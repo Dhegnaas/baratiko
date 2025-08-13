@@ -10,35 +10,13 @@
 </body>
 </html>
 <script>
-	document.write("<h1>Hello world</h1>")
-	a=prompt("Enter number 1: ");
-	b=prompt("Enter number 2: ")
-	sum=parseInt(a)+parseInt(b)
-	//document.write("Total is <b>"+sum+"</b>")
-	if(sum>100)
-		document.write(`Total  <b>${sum}</b> is greater than 100`)
-	else if(sum<100)
-		document.write(`Total  <b>${sum}</b> is less than 100`)
-	else
-		document.write(`Total  <b>${sum}</b> is  100`)
+	names=["ahmed","gacal","fahad","maryan","Liiban","Xamuud"];
+	document.write("<ol>")
+	// names.forEach((name,i)=>{
+	// 	document.write(`<li>index : ${i}, value: ${name}</li>`)
+	// })
+	names.map((row,i)=>{
+		document.write(`<li>${row}</li>`)
+	})
+	document.write("</ol>")
 </script>
-
-<!-- 
-`fdgdsf`
-document.write()
-cosole.log()
-alert()
-element.innerHTML
-eleent.textContent
-element.value
-
-four ways to make vairable in js:
-1. var variablname=value;
-2. let variablename=value;
-3. const variablename=value;
-4. variablename=value
-<script>
-
-</script>
- -->
-

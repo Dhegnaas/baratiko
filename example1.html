@@ -6,9 +6,17 @@
 	<title></title>
 </head>
 <body>
-<script>
-	n=parseInt(prompt("Enter number"))
-	document.write(!(n%2==0)?`the number <b>${n}</b> is kisi`:`the number <b>${n}</b> is dhaban`)
-</script>
+
 </body>
 </html>
+<script>
+	//names=["ahmed","gacal","fahad","maryan"];
+	n=parseInt(prompt("meeqo qof"))
+	names=new Array(n)
+	for(x=0; x<names.length; x-=-1)
+	names[x]=prompt(`Enter name of person ${x+1}: `);
+	document.write("<ol>")
+		for(i=0; i<names.length; i+=1)
+			document.write(`<li>${names[i]}</li>`)
+	document.write("</ol>")
+</script>
