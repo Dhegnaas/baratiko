@@ -1,36 +1,37 @@
-let cols=["no","item","Qty","Price","Total"]
-let sub2=["sub_total","discount","balance","paid","remain"]
+titles=["No","Item","Qty","Price","Total"]
+subs=["Sub total","Discount","Balance","Paid","Remiain"]
 document.write("<table><thead><tr>")
-cols.forEach((col)=>document.write(`<th>${col}</th>`))
+	titles.forEach((t)=>document.write(`<th>${t}</th>`))
 document.write("</tr></thead><tbody>")
 for(i=1; i<=5; i+=1){
-document.write(`<tr><td>${i}</td><td contenteditable='true'></td><td class='qty' contenteditable='true'></td>
-		<td class='pr' contenteditable='true'></td><td class='total'></td></tr>`)
+	document.write(`<tr>`)		
+		titles.forEach((col,x)=>document.write(x==0 || x==4?x==0?`<td class='${col}'>${i}</td>`:`<td class='${col}'></td>`:`<td contenteditable='true' class='${col}'></td>`))		
+	document.write(`</tr>`)
 }
-document.write(`<tr><th rowspan='6' colspan='3'> Signature</th>`)
-	sub2.forEach((sub,i)=>document.write(!(i%2==0)?`<tr><th>${sub}</th>
-		<td class='subs' contenteditable='true'></td></tr>`:`<tr><th>${sub}</th><td class='subs'></td></tr>`))
-document.write(`</tr>`)
-
+document.write(`<tr><th rowspan='${subs.length+1}' colspan='3'>Signagute</th>`)
+	subs.forEach((s,i)=>document.write(!(i%2==0)?`<tr><th>${s}</th><td class='sub' contenteditable='true'></td></tr>`:`<tr><th>${s}</th><td class='sub'></td></tr>`))
+document.write("</tr>")
 document.write("</tbody></table>")
-let qty=document.getElementsByClassName("qty")
-let pr=document.getElementsByClassName("pr")
-let total=document.getElementsByClassName("total")
-let subs=document.getElementsByClassName("subs")
-let sum=0
-for(i=0; i<pr.length; i+=1){
+total=document.getElementsByClassName("Total")
+price=document.getElementsByClassName("Price")
+qty=document.getElementsByClassName("Qty")
+sub=document.getElementsByClassName("sub")
+
+for(y=0; y<price.length; y+=1){
 	((index)=>{
-		pr[index].addEventListener("blur",()=>{
-			total[index].innerHTML=parseInt(qty[index].innerHTML)*parseInt(pr[index].innerHTML)
-			sum+=parseInt(qty[index].innerHTML)*parseInt(pr[index].innerHTML);
-			subs[0].innerHTML=sum
+		number=0;
+		price[index].addEventListener("blur",()=>{
+			total[index].innerHTML=parseInt(price[index].innerHTML)*parseInt(qty[index].innerHTML)
+			number+=parseInt(price[index].innerHTML)*parseInt(qty[index].innerHTML)
+			sub[0].innerHTML=number
 		})
-	})(i)
+	})(y)
 }
-for(j=0; j<subs.length; j+=1){
+
+for(j=0; j<sub.length; j+=1){
 	((index)=>{
-		subs[index].addEventListener("blur",()=>{
-			subs[index+1].innerHTML=parseInt(subs[index-1].innerHTML)-parseInt(subs[index].innerHTML)
+		sub[index].addEventListener("blur",()=>{
+			sub[index+1].innerHTML=parseInt(sub[index-1].innerHTML)-parseInt(sub[index].innerHTML)
 		})
 	})(j)
 }
