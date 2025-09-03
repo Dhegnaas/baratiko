@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bog HTML Hal File ah</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f4f9;
+      color: #333;
+    }
+    header {
+      background: #0C0457;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav {
+      background: #1E1360;
+      padding: 0.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      padding: 2rem;
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+    footer {
+      background: #0C0457;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+    button {
+      background: #0C0457;
+      color: #fff;
+      border: none;
+      padding: 0.7rem 1.2rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #1E1360;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ku soo dhawaaw Hal File HTML ah</h1>
+    <p>Tani waa tusaale file HTML keliya oo ka kooban design fudud</p>
+  </header>
+
+  <nav>
+    <a href="#home">Bogga Hore</a>
+    <a href="#about">Nagu saabsan</a>
+    <a href="#contact">Nala soo xiriir</a>
+  </nav>
+
+  <main>
+    <section id="home">
+      <h2>Bogga Hore</h2>
+      <p>Halkan waxaa ku qoran xogta ugu muhiimsan ee boggaaga.</p>
+      <button onclick="alert('Waad gujisay badhanka!')">Guji Halkaan</button>
+    </section>
+
+    <section id="about">
+      <h2>Nagu saabsan</h2>
+      <p>
+        Waxaan kuu diyaarinay hal file HTML ah oo keliya si aad si fudud ugu shaqeyso. 
+        Waxaa ku jira header, nav, main, sections iyo footer.
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2>Nala soo xiriir</h2>
+      <form onsubmit="event.preventDefault(); alert('Foomka waa la gudbiyey!')">
+        <label for="name">Magacaaga:</label><br />
+        <input type="text" id="name" name="name" required /><br /><br />
+        <label for="message">Fariintaada:</label><br />
+        <textarea id="message" name="message" rows="4" required></textarea><br /><br />
+        <button type="submit">Dir</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Hal File HTML | Dhammaan xuquuqda waa la ilaalinayaa</p>
+  </footer>
+</body>
+</html>
